@@ -1,0 +1,46 @@
+{
+  "session_id": "20250915_183210",
+  "cnc_target": "192.168.0.170:8080",
+  "attack_parameters": {
+    "calibration_drift": {
+      "enabled": false,
+      "drift_rate": 0.5,
+      "max_drift": 20.0,
+      "current_drift": 0.0,
+      "reset_period": 40
+    },
+    "power_reduction": {
+      "enabled": false,
+      "reduction_factor": 0.5
+    },
+    "y_injection": {
+      "enabled": false,
+      "injection_amount": -2.0,
+      "injection_frequency": 1
+    },
+    "home_override": {
+      "enabled": false,
+      "override_command": "$H"
+    },
+    "axis_swap": {
+      "enabled": false,
+      "swap_x_y": true
+    }
+  },
+  "statistics": {
+    "total_commands": 1,
+    "modified_commands": 0,
+    "firmware_responses": {
+      "<Idle|MPos:20.000,20.000,-0.100|FS:0,0>\r\nok": 1
+    },
+    "comparison_data": []
+  },
+  "command_history": [
+    {
+      "command": "?",
+      "firmware_response": "<Idle|MPos:20.000,20.000,-0.100|FS:0,0>\r\nok",
+      "latency_ms": 733.1702500000006
+    }
+  ],
+  "comparison_data": []
+}

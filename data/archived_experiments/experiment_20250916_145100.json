@@ -1,0 +1,77 @@
+{
+  "session_id": "20250916_145100",
+  "config": {
+    "attacks": {
+      "calibration_drift": {
+        "enabled": true,
+        "drift_rate": 0.5,
+        "current_drift": 1.0,
+        "max_drift": 20.0
+      },
+      "power_reduction": {
+        "enabled": true,
+        "reduction_factor": 0.5
+      },
+      "command_injection": {
+        "enabled": true,
+        "injection_pattern": "G0 Y150"
+      }
+    },
+    "defenses": {
+      "anomaly_detection": {
+        "enabled": true,
+        "threshold": 0.5
+      },
+      "boundary_check": {
+        "enabled": true,
+        "x_limits": [
+          0,
+          100
+        ],
+        "y_limits": [
+          0,
+          100
+        ],
+        "z_limits": [
+          -5,
+          50
+        ]
+      }
+    }
+  },
+  "statistics": {
+    "total_commands": 3,
+    "modified_commands": 2,
+    "attacks_detected": 2,
+    "attacks_blocked": 2
+  },
+  "data": [
+    {
+      "timestamp": "2025-09-16T14:51:44.331492",
+      "attack_type": "multiple",
+      "original_command": "G28",
+      "modified_command": "G28",
+      "cnc_response": "ok",
+      "detection_status": "undetected",
+      "impact_metric": 0
+    },
+    {
+      "timestamp": "2025-09-16T14:51:49.446416",
+      "attack_type": "multiple",
+      "original_command": "G0 X50",
+      "modified_command": "G0 X50; G0 Y150",
+      "cnc_response": "ok",
+      "detection_status": "detected",
+      "impact_metric": 9
+    },
+    {
+      "timestamp": "2025-09-16T14:51:50.571694",
+      "attack_type": "multiple",
+      "original_command": "G0 X50",
+      "modified_command": "G0 X50; G0 Y150",
+      "cnc_response": "ok",
+      "detection_status": "detected",
+      "impact_metric": 9
+    }
+  ]
+}

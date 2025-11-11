@@ -1,0 +1,74 @@
+services:
+  HostA:
+    image: handsonsecurity/seed-ubuntu:large-arm
+    container_name: A-10.9.0.5
+    hostname: hostA
+    tty: true
+    cap_add:
+      - ALL
+    networks:
+      net-10.9.0.0:
+        ipv4_address: 10.9.0.5
+    command: >-
+      bash -lc '/etc/init.d/openbsd-inetd start && tail -f /dev/null'
+    restart: unless-stopped
+
+  HostB:
+    image: handsonsecurity/seed-ubuntu:large-arm
+    container_name: B-10.9.0.6
+    hostname: hostB
+    tty: true
+    cap_add:
+      - ALL
+    networks:
+      net-10.9.0.0:
+        ipv4_address: 10.9.0.6
+    command: >-
+      bash -lc '/etc/init.d/openbsd-inetd start && tail -f /dev/null'
+    restart: unless-stopped
+
+  HostM:
+    image: handsonsecurity/seed-ubuntu:large-arm
+    container_name: M-10.9.0.105
+    hostname: attacker
+    tty: true
+    cap_add:
+      - ALL
+    privileged: true
+    ports:
+      - "8050:8050"
+      - "8888:8888"
+    volumes:
+      - ./volumes:/volumes
+      - ../../scenarios:/scenarios
+      - ../../data:/data
+    networks:
+      net-10.9.0.0:
+        ipv4_address: 10.9.0.105
+    command: >-
+      bash -lc '
+      echo "[*] Setting up attacker environment..." &&
+      apt-get update -qq &&
+      apt-get install -y -qq dsniff iptables python3-pip tcpdump net-tools &&
+      echo "[*] Installing Python dependencies..." &&
+      pip3 install --no-cache-dir -r /volumes/requirements.txt 2>/dev/null &&
+      echo "[*] Configuring iptables..." &&
+      iptables -I INPUT -s 10.9.0.5 -p tcp --dport 9090 -j DROP &&
+      iptables -I FORWARD -s 10.9.0.5 -p tcp --dport 9090 -j DROP &&
+      echo "[*] Enabling IP forwarding for MITM..." &&
+      echo 1 > /proc/sys/net/ipv4/ip_forward &&
+      /etc/init.d/openbsd-inetd start &&
+      echo "[*] Attacker container ready!" &&
+      echo "[*] Access with: docker exec -it M-10.9.0.105 /bin/bash" &&
+      tail -f /dev/null
+      '
+    restart: unless-stopped
+
+networks:
+  net-10.9.0.0:
+    name: net-10.9.0.0
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.9.0.0/24
+          gateway: 10.9.0.1

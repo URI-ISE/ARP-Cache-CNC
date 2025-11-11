@@ -1,0 +1,125 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+cnc/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Experimental Data (keep archived, ignore active)
+data/active_experiments/
+data/temp/
+*.pcap
+*.pcapng
+
+# Logs
+*.log
+logs/
+infrastructure/volumes/logs/
+
+# Docker volumes (local mounts)
+infrastructure/volumes/temp/
+infrastructure/volumes/captures/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Research artifacts
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.out
+*.pdf
+*.synctex.gz
+
+# Sensitive configuration
+*.key
+*.pem
+*.crt
+secrets/
+credentials.json
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Compiled
+*.o
+*.ko
+*.obj
+*.elf
+
+# Editor backup
+*~
+\#*\#
+.\#*
+
+# Test coverage
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Virtual environments
+.env
+.venv
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Large data files (track with git-lfs if needed)
+*.h5
+*.hdf5
+data/raw/
+data/processed/large/
+
+# Container-specific
+.dockerignore

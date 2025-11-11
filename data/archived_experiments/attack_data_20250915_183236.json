@@ -1,0 +1,168 @@
+{
+  "session_id": "20250915_183236",
+  "cnc_target": "192.168.0.170:8080",
+  "attack_parameters": {
+    "calibration_drift": {
+      "enabled": true,
+      "drift_rate": 0.5,
+      "max_drift": 20.0,
+      "current_drift": 7.0,
+      "reset_period": 5
+    },
+    "power_reduction": {
+      "enabled": false,
+      "reduction_factor": 0.5
+    },
+    "y_injection": {
+      "enabled": true,
+      "injection_amount": 20.0,
+      "injection_frequency": 1
+    },
+    "home_override": {
+      "enabled": false,
+      "override_command": "$H"
+    },
+    "axis_swap": {
+      "enabled": false,
+      "swap_x_y": true
+    }
+  },
+  "statistics": {
+    "total_commands": 25,
+    "modified_commands": 14,
+    "firmware_responses": {
+      "<Idle|MPos:20.000,20.000,-0.100|FS:0,0>\r\nok": 1,
+      "ok": 1,
+      "error:2": 1
+    },
+    "comparison_data": []
+  },
+  "command_history": [
+    {
+      "command": "?",
+      "firmware_response": "<Idle|MPos:20.000,20.000,-0.100|FS:0,0>\r\nok",
+      "latency_ms": 96.07675000000881
+    },
+    {
+      "command": "G0 X1; G1 Y20.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 57.98012500002869
+    },
+    {
+      "command": "G0 X1; G1 Y20.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 101.68879200000447
+    },
+    {
+      "command": "G0 X1; G1 Y20.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 44.758957999988525
+    },
+    {
+      "command": "G0 X10; G1 Y20.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 71.04799999996203
+    },
+    {
+      "command": "G0 X10; G1 Y20.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 222.4172909999993
+    },
+    {
+      "command": "G0 X10; G1 Y20.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 43.281374999992295
+    },
+    {
+      "command": "G0 X10; G1 Y20.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 84.71758299998555
+    },
+    {
+      "command": "G0 X10; G1 Y20.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 96.52166699999043
+    },
+    {
+      "command": "G0 X10; G1 Y20.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 9.914666000042871
+    },
+    {
+      "command": "G0 X1 Y1; G1 Y20.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 23.614500000007865
+    },
+    {
+      "command": "G0 Y20; G1 Y20.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 45.166375000007974
+    },
+    {
+      "command": "G0 Y20; G1 Y20.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 69.72729200003869
+    },
+    {
+      "command": "G0 X10; G1 Y20.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 27.34779200000048
+    },
+    {
+      "command": "G28",
+      "firmware_response": "ok",
+      "latency_ms": 110.90524999997342
+    },
+    {
+      "command": "G28",
+      "firmware_response": "ok",
+      "latency_ms": 74.19316599998638
+    },
+    {
+      "command": "Gas",
+      "firmware_response": "error:2",
+      "latency_ms": 35.22124999994958
+    },
+    {
+      "command": "G0 X10; G1 Y20.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 121.3239579999481
+    },
+    {
+      "command": "g0 x10",
+      "firmware_response": "ok",
+      "latency_ms": 78.26179100004538
+    },
+    {
+      "command": "g0 x10",
+      "firmware_response": "ok",
+      "latency_ms": 94.89562500004922
+    },
+    {
+      "command": "g0 x10",
+      "firmware_response": "ok",
+      "latency_ms": 120.79849999997805
+    },
+    {
+      "command": "g0 x10",
+      "firmware_response": "ok",
+      "latency_ms": 76.88945799998237
+    },
+    {
+      "command": "g0 x10",
+      "firmware_response": "ok",
+      "latency_ms": 53.46508399998129
+    },
+    {
+      "command": "g0 x10",
+      "firmware_response": "ok",
+      "latency_ms": 106.57458299999689
+    },
+    {
+      "command": "help",
+      "firmware_response": "error:2",
+      "latency_ms": 83.03633299999547
+    }
+  ],
+  "comparison_data": []
+}

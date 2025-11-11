@@ -1,0 +1,77 @@
+{
+  "session_id": "20250915_121516",
+  "config": {
+    "attacks": {
+      "calibration_drift": {
+        "enabled": true,
+        "drift_rate": 0.5,
+        "current_drift": 1.5,
+        "max_drift": 5.0
+      },
+      "power_reduction": {
+        "enabled": true,
+        "reduction_factor": 0.5
+      },
+      "command_injection": {
+        "enabled": true,
+        "injection_pattern": "G1 Y2 F500 S500"
+      }
+    },
+    "defenses": {
+      "anomaly_detection": {
+        "enabled": true,
+        "threshold": 0.5
+      },
+      "boundary_check": {
+        "enabled": false,
+        "x_limits": [
+          0,
+          100
+        ],
+        "y_limits": [
+          0,
+          100
+        ],
+        "z_limits": [
+          -5,
+          50
+        ]
+      }
+    }
+  },
+  "statistics": {
+    "total_commands": 3,
+    "modified_commands": 3,
+    "attacks_detected": 3,
+    "attacks_blocked": 0
+  },
+  "data": [
+    {
+      "timestamp": "2025-09-15T12:15:49.605893",
+      "attack_type": "multiple",
+      "original_command": "G0 X10 S500",
+      "modified_command": "G0 X10 S250; G1 Y2 F500 S500",
+      "cnc_response": "ok",
+      "detection_status": "detected",
+      "impact_metric": 17
+    },
+    {
+      "timestamp": "2025-09-15T12:15:58.301437",
+      "attack_type": "multiple",
+      "original_command": "G0 X10 S500",
+      "modified_command": "G0 X10 S250; G1 Y2 F500 S500",
+      "cnc_response": "ok",
+      "detection_status": "detected",
+      "impact_metric": 17
+    },
+    {
+      "timestamp": "2025-09-15T12:16:00.041804",
+      "attack_type": "multiple",
+      "original_command": "G0 X10 S500",
+      "modified_command": "G0 X10 S250; G1 Y2 F500 S500",
+      "cnc_response": "ok",
+      "detection_status": "detected",
+      "impact_metric": 17
+    }
+  ]
+}

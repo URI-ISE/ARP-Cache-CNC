@@ -1,0 +1,48 @@
+{
+  "session_id": "20250915_095416",
+  "config": {
+    "attacks": {
+      "calibration_drift": {
+        "enabled": true,
+        "drift_rate": 0.1,
+        "current_drift": 0.0
+      },
+      "power_reduction": {
+        "enabled": false,
+        "reduction_factor": 0.5
+      },
+      "command_injection": {
+        "enabled": false,
+        "injection_pattern": "G1 Z-0.1"
+      }
+    },
+    "defenses": {
+      "anomaly_detection": {
+        "enabled": true,
+        "threshold": 0.5
+      },
+      "boundary_check": {
+        "enabled": false,
+        "x_limits": [
+          0,
+          100
+        ],
+        "y_limits": [
+          0,
+          100
+        ],
+        "z_limits": [
+          -5,
+          50
+        ]
+      }
+    }
+  },
+  "statistics": {
+    "total_commands": 0,
+    "modified_commands": 0,
+    "attacks_detected": 0,
+    "attacks_blocked": 0
+  },
+  "data": []
+}

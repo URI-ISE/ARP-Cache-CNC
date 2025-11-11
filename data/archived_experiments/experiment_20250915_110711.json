@@ -1,0 +1,94 @@
+{
+  "session_id": "20250915_110711",
+  "config": {
+    "attacks": {
+      "calibration_drift": {
+        "enabled": true,
+        "drift_rate": 0.1,
+        "current_drift": 0.1
+      },
+      "power_reduction": {
+        "enabled": true,
+        "reduction_factor": 0.5
+      },
+      "command_injection": {
+        "enabled": false,
+        "injection_pattern": "G1 Z-0.1"
+      }
+    },
+    "defenses": {
+      "anomaly_detection": {
+        "enabled": false,
+        "threshold": 0.5
+      },
+      "boundary_check": {
+        "enabled": false,
+        "x_limits": [
+          0,
+          100
+        ],
+        "y_limits": [
+          0,
+          100
+        ],
+        "z_limits": [
+          -5,
+          50
+        ]
+      }
+    }
+  },
+  "statistics": {
+    "total_commands": 5,
+    "modified_commands": 1,
+    "attacks_detected": 0,
+    "attacks_blocked": 0
+  },
+  "data": [
+    {
+      "timestamp": "2025-09-15T11:07:54.174190",
+      "attack_type": "multiple",
+      "original_command": "G0 X20 S500",
+      "modified_command": "G0 X20 S250",
+      "cnc_response": "ok",
+      "detection_status": "undetected",
+      "impact_metric": 0
+    },
+    {
+      "timestamp": "2025-09-15T11:08:23.443848",
+      "attack_type": "multiple",
+      "original_command": "M3",
+      "modified_command": "M3",
+      "cnc_response": "ok",
+      "detection_status": "undetected",
+      "impact_metric": 0
+    },
+    {
+      "timestamp": "2025-09-15T11:08:59.870937",
+      "attack_type": "multiple",
+      "original_command": "M3",
+      "modified_command": "M3",
+      "cnc_response": "ok",
+      "detection_status": "undetected",
+      "impact_metric": 0
+    },
+    {
+      "timestamp": "2025-09-15T11:09:12.683574",
+      "attack_type": "multiple",
+      "original_command": "M3",
+      "modified_command": "M3",
+      "cnc_response": "ok",
+      "detection_status": "undetected",
+      "impact_metric": 0
+    },
+    {
+      "timestamp": "2025-09-15T11:09:42.141328",
+      "attack_type": "multiple",
+      "original_command": "M3",
+      "modified_command": "M3",
+      "cnc_response": "ok",
+      "detection_status": "undetected",
+      "impact_metric": 0
+    }
+  ]
+}

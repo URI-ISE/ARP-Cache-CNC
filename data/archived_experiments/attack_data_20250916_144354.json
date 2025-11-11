@@ -1,0 +1,149 @@
+{
+  "session_id": "20250916_144354",
+  "cnc_target": "192.168.0.170:8080",
+  "attack_parameters": {
+    "calibration_drift": {
+      "enabled": false,
+      "drift_rate": 0.5,
+      "max_drift": 20.0,
+      "current_drift": 0.0,
+      "reset_period": 40
+    },
+    "power_reduction": {
+      "enabled": false,
+      "reduction_factor": 0.5
+    },
+    "y_injection": {
+      "enabled": false,
+      "injection_amount": -2.0,
+      "injection_frequency": 1
+    },
+    "home_override": {
+      "enabled": false,
+      "override_command": "$H"
+    },
+    "axis_swap": {
+      "enabled": false,
+      "swap_x_y": true
+    }
+  },
+  "statistics": {
+    "total_commands": 21,
+    "modified_commands": 2,
+    "firmware_responses": {
+      "<Idle|MPos:40.000,5.000,0.000|FS:0,0>\r\nok": 1,
+      "error:5": 1,
+      "ok": 1,
+      "[No response]": 1
+    },
+    "comparison_data": []
+  },
+  "command_history": [
+    {
+      "command": "?",
+      "firmware_response": "<Idle|MPos:40.000,5.000,0.000|FS:0,0>\r\nok",
+      "latency_ms": 118.26391600015995
+    },
+    {
+      "command": "$H",
+      "firmware_response": "error:5",
+      "latency_ms": 114.66349999955128
+    },
+    {
+      "command": "$H",
+      "firmware_response": "error:5",
+      "latency_ms": 106.85620899994319
+    },
+    {
+      "command": "$H",
+      "firmware_response": "error:5",
+      "latency_ms": 115.78379100001257
+    },
+    {
+      "command": "$H",
+      "firmware_response": "error:5",
+      "latency_ms": 119.97820800024783
+    },
+    {
+      "command": "$H",
+      "firmware_response": "error:5",
+      "latency_ms": 93.83404200025325
+    },
+    {
+      "command": "$H",
+      "firmware_response": "error:5",
+      "latency_ms": 102.85070899999482
+    },
+    {
+      "command": "$H",
+      "firmware_response": "error:5",
+      "latency_ms": 108.23533300026611
+    },
+    {
+      "command": "$H",
+      "firmware_response": "error:5",
+      "latency_ms": 26.083416000346915
+    },
+    {
+      "command": "$H",
+      "firmware_response": "error:5",
+      "latency_ms": 91.19354199992813
+    },
+    {
+      "command": "$H",
+      "firmware_response": "error:5",
+      "latency_ms": 102.3812920002456
+    },
+    {
+      "command": "G90",
+      "firmware_response": "ok",
+      "latency_ms": 10.743332999936683
+    },
+    {
+      "command": "G1 F1500",
+      "firmware_response": "ok",
+      "latency_ms": 45.33070800016503
+    },
+    {
+      "command": "G1 X10 Y10",
+      "firmware_response": "ok",
+      "latency_ms": 108.77916700019341
+    },
+    {
+      "command": "G1 X10 Y30",
+      "firmware_response": "ok",
+      "latency_ms": 47.10354200005895
+    },
+    {
+      "command": "G1 X30 Y30",
+      "firmware_response": "ok",
+      "latency_ms": 175.5384159996538
+    },
+    {
+      "command": "G1 X30 Y10",
+      "firmware_response": "ok",
+      "latency_ms": 719.3207089999305
+    },
+    {
+      "command": "G1 X10 Y10",
+      "firmware_response": "ok",
+      "latency_ms": 22.085250000145606
+    },
+    {
+      "command": "M3 S500",
+      "firmware_response": "[No response]",
+      "latency_ms": 1001.4780840001549
+    },
+    {
+      "command": "G1 X20 Y20",
+      "firmware_response": "ok",
+      "latency_ms": 839.5900419995996
+    },
+    {
+      "command": "M5",
+      "firmware_response": "ok",
+      "latency_ms": 860.0485010001648
+    }
+  ],
+  "comparison_data": []
+}

@@ -1,0 +1,86 @@
+{
+  "session_id": "20250915_131959",
+  "config": {
+    "attacks": {
+      "calibration_drift": {
+        "enabled": true,
+        "drift_rate": 0.5,
+        "current_drift": 2.0,
+        "max_drift": 20.0
+      },
+      "power_reduction": {
+        "enabled": true,
+        "reduction_factor": 0.5
+      },
+      "command_injection": {
+        "enabled": true,
+        "injection_pattern": "G1 Y-2 F500"
+      }
+    },
+    "defenses": {
+      "anomaly_detection": {
+        "enabled": false,
+        "threshold": 0.5
+      },
+      "boundary_check": {
+        "enabled": false,
+        "x_limits": [
+          0,
+          100
+        ],
+        "y_limits": [
+          0,
+          100
+        ],
+        "z_limits": [
+          -5,
+          50
+        ]
+      }
+    }
+  },
+  "statistics": {
+    "total_commands": 4,
+    "modified_commands": 4,
+    "attacks_detected": 0,
+    "attacks_blocked": 0
+  },
+  "data": [
+    {
+      "timestamp": "2025-09-15T13:24:37.622789",
+      "attack_type": "multiple",
+      "original_command": "G0 X1 Y1",
+      "modified_command": "G0 X1 Y1; G1 Y-2 F500",
+      "cnc_response": "ok",
+      "detection_status": "undetected",
+      "impact_metric": 13
+    },
+    {
+      "timestamp": "2025-09-15T13:24:55.841905",
+      "attack_type": "multiple",
+      "original_command": "G0 X1 Y1",
+      "modified_command": "G0 X1 Y1; G1 Y-2 F500",
+      "cnc_response": "ok",
+      "detection_status": "undetected",
+      "impact_metric": 13
+    },
+    {
+      "timestamp": "2025-09-15T13:25:02.594621",
+      "attack_type": "multiple",
+      "original_command": "G0 X1 Y1",
+      "modified_command": "G0 X1 Y1; G1 Y-2 F500",
+      "cnc_response": "ok",
+      "detection_status": "undetected",
+      "impact_metric": 13
+    },
+    {
+      "timestamp": "2025-09-15T13:25:14.869362",
+      "attack_type": "multiple",
+      "original_command": "G0 X1 Y1 S500",
+      "modified_command": "G0 X1 Y1 S250; G1 Y-2 F500",
+      "cnc_response": "ok",
+      "detection_status": "undetected",
+      "impact_metric": 13
+    }
+  ]
+}

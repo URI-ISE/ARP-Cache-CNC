@@ -1,0 +1,43 @@
+{
+  "experiment_id": "20250909_1518",
+  "test_results": {
+    "connectivity": {
+      "direct_cnc": "PASSED",
+      "proxy_connection": "PASSED",
+      "command_forwarding": "PASSED",
+      "data_capture": "PASSED"
+    },
+    "passive_monitoring": {
+      "duration_minutes": 3,
+      "commands_intercepted": 13,
+      "commands_modified": 0,
+      "sources": ["10.211.55.2", "10.211.55.3"]
+    },
+    "attack_mode": {
+      "duration_minutes": 1,
+      "commands_intercepted": 8,
+      "commands_modified": 1,
+      "modification_rate": 0.125,
+      "attacks": {
+        "power_reduction": {
+          "original": "M3 S500",
+          "modified": "M3 S250",
+          "reduction_percent": 50,
+          "success": true
+        }
+      }
+    },
+    "machine_impact": {
+      "position_changes": true,
+      "final_position": {
+        "x": 20.0,
+        "y": 10.0,
+        "z": 0.0
+      },
+      "errors_generated": 0,
+      "alarms_triggered": 0
+    }
+  },
+  "vulnerability_score": 10,
+  "detection_score": 0
+}

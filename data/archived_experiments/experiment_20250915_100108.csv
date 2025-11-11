@@ -1,0 +1,6 @@
+timestamp,attack_type,original_command,modified_command,cnc_response,detection_status,impact_metric
+2025-09-15T10:01:30.721568,multiple,G0 X50 Y50 S500,G0 X50 Y50 S250,ok,undetected,0
+2025-09-15T10:02:33.912751,multiple,G0 X-50 Y-50 S500,G0 X-50 Y-50 S250,ok,undetected,0
+2025-09-15T10:02:53.151547,multiple,G0 X50 Y50 S500,G0 X50 Y50 S250,ok,undetected,0
+2025-09-15T10:03:07.068297,multiple,G0 X10 S500,G0 X10 S250,ok,undetected,0
+2025-09-15T10:03:10.794002,multiple,G0 X10 S500,G0 X10 S250,ok,undetected,0

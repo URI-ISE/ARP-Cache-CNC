@@ -1,0 +1,98 @@
+{
+  "session_id": "20250916_143332",
+  "cnc_target": "192.168.0.170:8080",
+  "attack_parameters": {
+    "calibration_drift": {
+      "enabled": false,
+      "drift_rate": 0.5,
+      "max_drift": 20.0,
+      "current_drift": 0.0,
+      "reset_period": 40
+    },
+    "power_reduction": {
+      "enabled": false,
+      "reduction_factor": 0.5
+    },
+    "y_injection": {
+      "enabled": true,
+      "injection_amount": 200.0,
+      "injection_frequency": 1
+    },
+    "home_override": {
+      "enabled": false,
+      "override_command": "$H"
+    },
+    "axis_swap": {
+      "enabled": false,
+      "swap_x_y": true
+    }
+  },
+  "statistics": {
+    "total_commands": 11,
+    "modified_commands": 7,
+    "firmware_responses": {
+      "<Idle|MPos:20.000,20.000,0.000|FS:0,0|WCO:0.000,0.000,0.000>\r\nok": 1,
+      "ok": 1,
+      "[No response]": 1
+    },
+    "comparison_data": []
+  },
+  "command_history": [
+    {
+      "command": "?",
+      "firmware_response": "<Idle|MPos:20.000,20.000,0.000|FS:0,0|WCO:0.000,0.000,0.000>\r\nok",
+      "latency_ms": 123.96741699967606
+    },
+    {
+      "command": "G90",
+      "firmware_response": "ok",
+      "latency_ms": 53.12966700012112
+    },
+    {
+      "command": "G1 F1500; G1 Y200.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 104.4830840000941
+    },
+    {
+      "command": "G1 X10 Y10; G1 Y200.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 102.04254100017351
+    },
+    {
+      "command": "G1 X30 Y10; G1 Y200.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 107.05025000015667
+    },
+    {
+      "command": "G1 X30 Y30; G1 Y200.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 107.83095800024967
+    },
+    {
+      "command": "G1 X10 Y30; G1 Y200.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 56.12299999984316
+    },
+    {
+      "command": "G1 X10 Y10; G1 Y200.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 57.602667000082874
+    },
+    {
+      "command": "M3 S500",
+      "firmware_response": "[No response]",
+      "latency_ms": 1004.7861670000202
+    },
+    {
+      "command": "G1 X20 Y20; G1 Y200.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 809.6707509998851
+    },
+    {
+      "command": "M5",
+      "firmware_response": "ok",
+      "latency_ms": 0.27341700024408055
+    }
+  ],
+  "comparison_data": []
+}

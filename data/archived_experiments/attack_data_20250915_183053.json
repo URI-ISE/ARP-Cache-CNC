@@ -1,0 +1,1024 @@
+{
+  "session_id": "20250915_183053",
+  "cnc_target": "192.168.0.170:8080",
+  "attack_parameters": {
+    "calibration_drift": {
+      "enabled": true,
+      "drift_rate": 0.5,
+      "max_drift": 20.0,
+      "current_drift": 0,
+      "reset_period": 6
+    },
+    "power_reduction": {
+      "enabled": true,
+      "reduction_factor": 0.5
+    },
+    "y_injection": {
+      "enabled": true,
+      "injection_amount": 15.0,
+      "injection_frequency": 2
+    },
+    "home_override": {
+      "enabled": false,
+      "override_command": "$H"
+    },
+    "axis_swap": {
+      "enabled": false,
+      "swap_x_y": true
+    }
+  },
+  "statistics": {
+    "total_commands": 22,
+    "modified_commands": 4,
+    "firmware_responses": {
+      "<Idle|MPos:10.000,10.000,-0.100|FS:0,0|WCO:0.000,0.000,0.000>\r\nok": 1,
+      "ok": 1,
+      "[No response]": 4,
+      "ok\r\nok": 1
+    },
+    "comparison_data": {
+      "with_attacks": [
+        {
+          "timestamp": "2025-09-15T18:31:45.015286",
+          "command": "G90",
+          "modified_command": "G90",
+          "firmware_response": "ok",
+          "latency_ms": 60.845374999985324,
+          "attack_type": "none",
+          "parameters": {
+            "calibration_drift": {
+              "enabled": true,
+              "drift_rate": 0.5,
+              "max_drift": 20.0,
+              "current_drift": 0,
+              "reset_period": 6
+            },
+            "power_reduction": {
+              "enabled": true,
+              "reduction_factor": 0.5
+            },
+            "y_injection": {
+              "enabled": true,
+              "injection_amount": 15.0,
+              "injection_frequency": 2
+            },
+            "home_override": {
+              "enabled": false,
+              "override_command": "$H"
+            },
+            "axis_swap": {
+              "enabled": false,
+              "swap_x_y": true
+            }
+          }
+        },
+        {
+          "timestamp": "2025-09-15T18:31:45.421581",
+          "command": "G1 F1500",
+          "modified_command": "G1 F1500; G1 Y15.0 F500",
+          "firmware_response": "ok",
+          "latency_ms": 100.65137600003027,
+          "attack_type": "Y_INJECT: Added Y15.0",
+          "parameters": {
+            "calibration_drift": {
+              "enabled": true,
+              "drift_rate": 0.5,
+              "max_drift": 20.0,
+              "current_drift": 0,
+              "reset_period": 6
+            },
+            "power_reduction": {
+              "enabled": true,
+              "reduction_factor": 0.5
+            },
+            "y_injection": {
+              "enabled": true,
+              "injection_amount": 15.0,
+              "injection_frequency": 2
+            },
+            "home_override": {
+              "enabled": false,
+              "override_command": "$H"
+            },
+            "axis_swap": {
+              "enabled": false,
+              "swap_x_y": true
+            }
+          }
+        },
+        {
+          "timestamp": "2025-09-15T18:31:45.832349",
+          "command": "G1 X10 Y10",
+          "modified_command": "G1 X10 Y10",
+          "firmware_response": "ok",
+          "latency_ms": 105.62224999995351,
+          "attack_type": "DRIFT: +0.00mm",
+          "parameters": {
+            "calibration_drift": {
+              "enabled": true,
+              "drift_rate": 0.5,
+              "max_drift": 20.0,
+              "current_drift": 0,
+              "reset_period": 6
+            },
+            "power_reduction": {
+              "enabled": true,
+              "reduction_factor": 0.5
+            },
+            "y_injection": {
+              "enabled": true,
+              "injection_amount": 15.0,
+              "injection_frequency": 2
+            },
+            "home_override": {
+              "enabled": false,
+              "override_command": "$H"
+            },
+            "axis_swap": {
+              "enabled": false,
+              "swap_x_y": true
+            }
+          }
+        },
+        {
+          "timestamp": "2025-09-15T18:31:46.344476",
+          "command": "G1 X30 Y10",
+          "modified_command": "G1 X30 Y10; G1 Y15.0 F500",
+          "firmware_response": "ok",
+          "latency_ms": 206.43733299999667,
+          "attack_type": "DRIFT: +0.50mm|Y_INJECT: Added Y15.0",
+          "parameters": {
+            "calibration_drift": {
+              "enabled": true,
+              "drift_rate": 0.5,
+              "max_drift": 20.0,
+              "current_drift": 0,
+              "reset_period": 6
+            },
+            "power_reduction": {
+              "enabled": true,
+              "reduction_factor": 0.5
+            },
+            "y_injection": {
+              "enabled": true,
+              "injection_amount": 15.0,
+              "injection_frequency": 2
+            },
+            "home_override": {
+              "enabled": false,
+              "override_command": "$H"
+            },
+            "axis_swap": {
+              "enabled": false,
+              "swap_x_y": true
+            }
+          }
+        },
+        {
+          "timestamp": "2025-09-15T18:31:47.650629",
+          "command": "G1 X30 Y30",
+          "modified_command": "G1 X30 Y30",
+          "firmware_response": "[No response]",
+          "latency_ms": 1004.9092929999688,
+          "attack_type": "DRIFT: +1.00mm",
+          "parameters": {
+            "calibration_drift": {
+              "enabled": true,
+              "drift_rate": 0.5,
+              "max_drift": 20.0,
+              "current_drift": 0,
+              "reset_period": 6
+            },
+            "power_reduction": {
+              "enabled": true,
+              "reduction_factor": 0.5
+            },
+            "y_injection": {
+              "enabled": true,
+              "injection_amount": 15.0,
+              "injection_frequency": 2
+            },
+            "home_override": {
+              "enabled": false,
+              "override_command": "$H"
+            },
+            "axis_swap": {
+              "enabled": false,
+              "swap_x_y": true
+            }
+          }
+        },
+        {
+          "timestamp": "2025-09-15T18:31:47.988200",
+          "command": "G1 X10 Y30",
+          "modified_command": "G1 X10 Y30; G1 Y15.0 F500",
+          "firmware_response": "ok",
+          "latency_ms": 35.246792000009464,
+          "attack_type": "DRIFT: +1.50mm|Y_INJECT: Added Y15.0",
+          "parameters": {
+            "calibration_drift": {
+              "enabled": true,
+              "drift_rate": 0.5,
+              "max_drift": 20.0,
+              "current_drift": 0,
+              "reset_period": 6
+            },
+            "power_reduction": {
+              "enabled": true,
+              "reduction_factor": 0.5
+            },
+            "y_injection": {
+              "enabled": true,
+              "injection_amount": 15.0,
+              "injection_frequency": 2
+            },
+            "home_override": {
+              "enabled": false,
+              "override_command": "$H"
+            },
+            "axis_swap": {
+              "enabled": false,
+              "swap_x_y": true
+            }
+          }
+        },
+        {
+          "timestamp": "2025-09-15T18:31:48.293822",
+          "command": "G1 X10 Y10",
+          "modified_command": "G1 X10 Y10",
+          "firmware_response": "ok",
+          "latency_ms": 0.1992919999906917,
+          "attack_type": "DRIFT: +2.00mm",
+          "parameters": {
+            "calibration_drift": {
+              "enabled": true,
+              "drift_rate": 0.5,
+              "max_drift": 20.0,
+              "current_drift": 0,
+              "reset_period": 6
+            },
+            "power_reduction": {
+              "enabled": true,
+              "reduction_factor": 0.5
+            },
+            "y_injection": {
+              "enabled": true,
+              "injection_amount": 15.0,
+              "injection_frequency": 2
+            },
+            "home_override": {
+              "enabled": false,
+              "override_command": "$H"
+            },
+            "axis_swap": {
+              "enabled": false,
+              "swap_x_y": true
+            }
+          }
+        },
+        {
+          "timestamp": "2025-09-15T18:31:48.597844",
+          "command": "M3 S500",
+          "modified_command": "M3 S250",
+          "firmware_response": "ok",
+          "latency_ms": 0.17129100001511688,
+          "attack_type": "POWER: S500 -> S250",
+          "parameters": {
+            "calibration_drift": {
+              "enabled": true,
+              "drift_rate": 0.5,
+              "max_drift": 20.0,
+              "current_drift": 0,
+              "reset_period": 6
+            },
+            "power_reduction": {
+              "enabled": true,
+              "reduction_factor": 0.5
+            },
+            "y_injection": {
+              "enabled": true,
+              "injection_amount": 15.0,
+              "injection_frequency": 2
+            },
+            "home_override": {
+              "enabled": false,
+              "override_command": "$H"
+            },
+            "axis_swap": {
+              "enabled": false,
+              "swap_x_y": true
+            }
+          }
+        },
+        {
+          "timestamp": "2025-09-15T18:31:49.907205",
+          "command": "G1 X20 Y20",
+          "modified_command": "G1 X20 Y20",
+          "firmware_response": "[No response]",
+          "latency_ms": 1004.0938330000131,
+          "attack_type": "DRIFT: +2.50mm",
+          "parameters": {
+            "calibration_drift": {
+              "enabled": true,
+              "drift_rate": 0.5,
+              "max_drift": 20.0,
+              "current_drift": 0,
+              "reset_period": 6
+            },
+            "power_reduction": {
+              "enabled": true,
+              "reduction_factor": 0.5
+            },
+            "y_injection": {
+              "enabled": true,
+              "injection_amount": 15.0,
+              "injection_frequency": 2
+            },
+            "home_override": {
+              "enabled": false,
+              "override_command": "$H"
+            },
+            "axis_swap": {
+              "enabled": false,
+              "swap_x_y": true
+            }
+          }
+        },
+        {
+          "timestamp": "2025-09-15T18:31:50.523678",
+          "command": "M5",
+          "modified_command": "M5",
+          "firmware_response": "ok",
+          "latency_ms": 314.06133399997316,
+          "attack_type": "none",
+          "parameters": {
+            "calibration_drift": {
+              "enabled": true,
+              "drift_rate": 0.5,
+              "max_drift": 20.0,
+              "current_drift": 0,
+              "reset_period": 6
+            },
+            "power_reduction": {
+              "enabled": true,
+              "reduction_factor": 0.5
+            },
+            "y_injection": {
+              "enabled": true,
+              "injection_amount": 15.0,
+              "injection_frequency": 2
+            },
+            "home_override": {
+              "enabled": false,
+              "override_command": "$H"
+            },
+            "axis_swap": {
+              "enabled": false,
+              "swap_x_y": true
+            }
+          }
+        }
+      ],
+      "without_attacks": [
+        {
+          "timestamp": "2025-09-15T18:31:51.835589",
+          "command": "G90",
+          "modified_command": "G90",
+          "firmware_response": "ok\r\nok",
+          "latency_ms": 0.23587499998711792,
+          "attack_type": "none",
+          "parameters": {}
+        },
+        {
+          "timestamp": "2025-09-15T18:31:52.140400",
+          "command": "G1 F1500",
+          "modified_command": "G1 F1500",
+          "firmware_response": "ok",
+          "latency_ms": 0.2884169999788355,
+          "attack_type": "none",
+          "parameters": {}
+        },
+        {
+          "timestamp": "2025-09-15T18:31:52.440992",
+          "command": "G1 X10 Y10",
+          "modified_command": "G1 X10 Y10",
+          "firmware_response": "ok",
+          "latency_ms": 0.17545900004733994,
+          "attack_type": "none",
+          "parameters": {}
+        },
+        {
+          "timestamp": "2025-09-15T18:31:52.745772",
+          "command": "G1 X30 Y10",
+          "modified_command": "G1 X30 Y10",
+          "firmware_response": "ok",
+          "latency_ms": 0.2457499999763968,
+          "attack_type": "none",
+          "parameters": {}
+        },
+        {
+          "timestamp": "2025-09-15T18:31:53.051568",
+          "command": "G1 X30 Y30",
+          "modified_command": "G1 X30 Y30",
+          "firmware_response": "ok",
+          "latency_ms": 0.22762499997952546,
+          "attack_type": "none",
+          "parameters": {}
+        },
+        {
+          "timestamp": "2025-09-15T18:31:53.352609",
+          "command": "G1 X10 Y30",
+          "modified_command": "G1 X10 Y30",
+          "firmware_response": "ok",
+          "latency_ms": 0.1760829999852831,
+          "attack_type": "none",
+          "parameters": {}
+        },
+        {
+          "timestamp": "2025-09-15T18:31:53.653677",
+          "command": "G1 X10 Y10",
+          "modified_command": "G1 X10 Y10",
+          "firmware_response": "ok",
+          "latency_ms": 0.19687500002874003,
+          "attack_type": "none",
+          "parameters": {}
+        },
+        {
+          "timestamp": "2025-09-15T18:31:53.954972",
+          "command": "M3 S500",
+          "modified_command": "M3 S500",
+          "firmware_response": "ok",
+          "latency_ms": 0.2903330000094684,
+          "attack_type": "none",
+          "parameters": {}
+        },
+        {
+          "timestamp": "2025-09-15T18:31:55.262290",
+          "command": "G1 X20 Y20",
+          "modified_command": "G1 X20 Y20",
+          "firmware_response": "[No response]",
+          "latency_ms": 1001.5695430000164,
+          "attack_type": "none",
+          "parameters": {}
+        },
+        {
+          "timestamp": "2025-09-15T18:31:56.571587",
+          "command": "M5",
+          "modified_command": "M5",
+          "firmware_response": "[No response]",
+          "latency_ms": 1005.8762090000073,
+          "attack_type": "none",
+          "parameters": {}
+        }
+      ]
+    }
+  },
+  "command_history": [
+    {
+      "command": "?",
+      "firmware_response": "<Idle|MPos:10.000,10.000,-0.100|FS:0,0|WCO:0.000,0.000,0.000>\r\nok",
+      "latency_ms": 118.2470830000284
+    },
+    {
+      "command": "G90",
+      "firmware_response": "ok",
+      "latency_ms": 60.845374999985324
+    },
+    {
+      "command": "G1 F1500; G1 Y15.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 100.65137600003027
+    },
+    {
+      "command": "G1 X10 Y10",
+      "firmware_response": "ok",
+      "latency_ms": 105.62224999995351
+    },
+    {
+      "command": "G1 X30 Y10; G1 Y15.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 206.43733299999667
+    },
+    {
+      "command": "G1 X30 Y30",
+      "firmware_response": "[No response]",
+      "latency_ms": 1004.9092929999688
+    },
+    {
+      "command": "G1 X10 Y30; G1 Y15.0 F500",
+      "firmware_response": "ok",
+      "latency_ms": 35.246792000009464
+    },
+    {
+      "command": "G1 X10 Y10",
+      "firmware_response": "ok",
+      "latency_ms": 0.1992919999906917
+    },
+    {
+      "command": "M3 S250",
+      "firmware_response": "ok",
+      "latency_ms": 0.17129100001511688
+    },
+    {
+      "command": "G1 X20 Y20",
+      "firmware_response": "[No response]",
+      "latency_ms": 1004.0938330000131
+    },
+    {
+      "command": "M5",
+      "firmware_response": "ok",
+      "latency_ms": 314.06133399997316
+    },
+    {
+      "command": "G0 X100",
+      "firmware_response": "ok",
+      "latency_ms": 0.23270799999863812
+    },
+    {
+      "command": "G90",
+      "firmware_response": "ok\r\nok",
+      "latency_ms": 0.23587499998711792
+    },
+    {
+      "command": "G1 F1500",
+      "firmware_response": "ok",
+      "latency_ms": 0.2884169999788355
+    },
+    {
+      "command": "G1 X10 Y10",
+      "firmware_response": "ok",
+      "latency_ms": 0.17545900004733994
+    },
+    {
+      "command": "G1 X30 Y10",
+      "firmware_response": "ok",
+      "latency_ms": 0.2457499999763968
+    },
+    {
+      "command": "G1 X30 Y30",
+      "firmware_response": "ok",
+      "latency_ms": 0.22762499997952546
+    },
+    {
+      "command": "G1 X10 Y30",
+      "firmware_response": "ok",
+      "latency_ms": 0.1760829999852831
+    },
+    {
+      "command": "G1 X10 Y10",
+      "firmware_response": "ok",
+      "latency_ms": 0.19687500002874003
+    },
+    {
+      "command": "M3 S500",
+      "firmware_response": "ok",
+      "latency_ms": 0.2903330000094684
+    },
+    {
+      "command": "G1 X20 Y20",
+      "firmware_response": "[No response]",
+      "latency_ms": 1001.5695430000164
+    },
+    {
+      "command": "M5",
+      "firmware_response": "[No response]",
+      "latency_ms": 1005.8762090000073
+    }
+  ],
+  "comparison_data": {
+    "with_attacks": [
+      {
+        "timestamp": "2025-09-15T18:31:45.015286",
+        "command": "G90",
+        "modified_command": "G90",
+        "firmware_response": "ok",
+        "latency_ms": 60.845374999985324,
+        "attack_type": "none",
+        "parameters": {
+          "calibration_drift": {
+            "enabled": true,
+            "drift_rate": 0.5,
+            "max_drift": 20.0,
+            "current_drift": 0,
+            "reset_period": 6
+          },
+          "power_reduction": {
+            "enabled": true,
+            "reduction_factor": 0.5
+          },
+          "y_injection": {
+            "enabled": true,
+            "injection_amount": 15.0,
+            "injection_frequency": 2
+          },
+          "home_override": {
+            "enabled": false,
+            "override_command": "$H"
+          },
+          "axis_swap": {
+            "enabled": false,
+            "swap_x_y": true
+          }
+        }
+      },
+      {
+        "timestamp": "2025-09-15T18:31:45.421581",
+        "command": "G1 F1500",
+        "modified_command": "G1 F1500; G1 Y15.0 F500",
+        "firmware_response": "ok",
+        "latency_ms": 100.65137600003027,
+        "attack_type": "Y_INJECT: Added Y15.0",
+        "parameters": {
+          "calibration_drift": {
+            "enabled": true,
+            "drift_rate": 0.5,
+            "max_drift": 20.0,
+            "current_drift": 0,
+            "reset_period": 6
+          },
+          "power_reduction": {
+            "enabled": true,
+            "reduction_factor": 0.5
+          },
+          "y_injection": {
+            "enabled": true,
+            "injection_amount": 15.0,
+            "injection_frequency": 2
+          },
+          "home_override": {
+            "enabled": false,
+            "override_command": "$H"
+          },
+          "axis_swap": {
+            "enabled": false,
+            "swap_x_y": true
+          }
+        }
+      },
+      {
+        "timestamp": "2025-09-15T18:31:45.832349",
+        "command": "G1 X10 Y10",
+        "modified_command": "G1 X10 Y10",
+        "firmware_response": "ok",
+        "latency_ms": 105.62224999995351,
+        "attack_type": "DRIFT: +0.00mm",
+        "parameters": {
+          "calibration_drift": {
+            "enabled": true,
+            "drift_rate": 0.5,
+            "max_drift": 20.0,
+            "current_drift": 0,
+            "reset_period": 6
+          },
+          "power_reduction": {
+            "enabled": true,
+            "reduction_factor": 0.5
+          },
+          "y_injection": {
+            "enabled": true,
+            "injection_amount": 15.0,
+            "injection_frequency": 2
+          },
+          "home_override": {
+            "enabled": false,
+            "override_command": "$H"
+          },
+          "axis_swap": {
+            "enabled": false,
+            "swap_x_y": true
+          }
+        }
+      },
+      {
+        "timestamp": "2025-09-15T18:31:46.344476",
+        "command": "G1 X30 Y10",
+        "modified_command": "G1 X30 Y10; G1 Y15.0 F500",
+        "firmware_response": "ok",
+        "latency_ms": 206.43733299999667,
+        "attack_type": "DRIFT: +0.50mm|Y_INJECT: Added Y15.0",
+        "parameters": {
+          "calibration_drift": {
+            "enabled": true,
+            "drift_rate": 0.5,
+            "max_drift": 20.0,
+            "current_drift": 0,
+            "reset_period": 6
+          },
+          "power_reduction": {
+            "enabled": true,
+            "reduction_factor": 0.5
+          },
+          "y_injection": {
+            "enabled": true,
+            "injection_amount": 15.0,
+            "injection_frequency": 2
+          },
+          "home_override": {
+            "enabled": false,
+            "override_command": "$H"
+          },
+          "axis_swap": {
+            "enabled": false,
+            "swap_x_y": true
+          }
+        }
+      },
+      {
+        "timestamp": "2025-09-15T18:31:47.650629",
+        "command": "G1 X30 Y30",
+        "modified_command": "G1 X30 Y30",
+        "firmware_response": "[No response]",
+        "latency_ms": 1004.9092929999688,
+        "attack_type": "DRIFT: +1.00mm",
+        "parameters": {
+          "calibration_drift": {
+            "enabled": true,
+            "drift_rate": 0.5,
+            "max_drift": 20.0,
+            "current_drift": 0,
+            "reset_period": 6
+          },
+          "power_reduction": {
+            "enabled": true,
+            "reduction_factor": 0.5
+          },
+          "y_injection": {
+            "enabled": true,
+            "injection_amount": 15.0,
+            "injection_frequency": 2
+          },
+          "home_override": {
+            "enabled": false,
+            "override_command": "$H"
+          },
+          "axis_swap": {
+            "enabled": false,
+            "swap_x_y": true
+          }
+        }
+      },
+      {
+        "timestamp": "2025-09-15T18:31:47.988200",
+        "command": "G1 X10 Y30",
+        "modified_command": "G1 X10 Y30; G1 Y15.0 F500",
+        "firmware_response": "ok",
+        "latency_ms": 35.246792000009464,
+        "attack_type": "DRIFT: +1.50mm|Y_INJECT: Added Y15.0",
+        "parameters": {
+          "calibration_drift": {
+            "enabled": true,
+            "drift_rate": 0.5,
+            "max_drift": 20.0,
+            "current_drift": 0,
+            "reset_period": 6
+          },
+          "power_reduction": {
+            "enabled": true,
+            "reduction_factor": 0.5
+          },
+          "y_injection": {
+            "enabled": true,
+            "injection_amount": 15.0,
+            "injection_frequency": 2
+          },
+          "home_override": {
+            "enabled": false,
+            "override_command": "$H"
+          },
+          "axis_swap": {
+            "enabled": false,
+            "swap_x_y": true
+          }
+        }
+      },
+      {
+        "timestamp": "2025-09-15T18:31:48.293822",
+        "command": "G1 X10 Y10",
+        "modified_command": "G1 X10 Y10",
+        "firmware_response": "ok",
+        "latency_ms": 0.1992919999906917,
+        "attack_type": "DRIFT: +2.00mm",
+        "parameters": {
+          "calibration_drift": {
+            "enabled": true,
+            "drift_rate": 0.5,
+            "max_drift": 20.0,
+            "current_drift": 0,
+            "reset_period": 6
+          },
+          "power_reduction": {
+            "enabled": true,
+            "reduction_factor": 0.5
+          },
+          "y_injection": {
+            "enabled": true,
+            "injection_amount": 15.0,
+            "injection_frequency": 2
+          },
+          "home_override": {
+            "enabled": false,
+            "override_command": "$H"
+          },
+          "axis_swap": {
+            "enabled": false,
+            "swap_x_y": true
+          }
+        }
+      },
+      {
+        "timestamp": "2025-09-15T18:31:48.597844",
+        "command": "M3 S500",
+        "modified_command": "M3 S250",
+        "firmware_response": "ok",
+        "latency_ms": 0.17129100001511688,
+        "attack_type": "POWER: S500 -> S250",
+        "parameters": {
+          "calibration_drift": {
+            "enabled": true,
+            "drift_rate": 0.5,
+            "max_drift": 20.0,
+            "current_drift": 0,
+            "reset_period": 6
+          },
+          "power_reduction": {
+            "enabled": true,
+            "reduction_factor": 0.5
+          },
+          "y_injection": {
+            "enabled": true,
+            "injection_amount": 15.0,
+            "injection_frequency": 2
+          },
+          "home_override": {
+            "enabled": false,
+            "override_command": "$H"
+          },
+          "axis_swap": {
+            "enabled": false,
+            "swap_x_y": true
+          }
+        }
+      },
+      {
+        "timestamp": "2025-09-15T18:31:49.907205",
+        "command": "G1 X20 Y20",
+        "modified_command": "G1 X20 Y20",
+        "firmware_response": "[No response]",
+        "latency_ms": 1004.0938330000131,
+        "attack_type": "DRIFT: +2.50mm",
+        "parameters": {
+          "calibration_drift": {
+            "enabled": true,
+            "drift_rate": 0.5,
+            "max_drift": 20.0,
+            "current_drift": 0,
+            "reset_period": 6
+          },
+          "power_reduction": {
+            "enabled": true,
+            "reduction_factor": 0.5
+          },
+          "y_injection": {
+            "enabled": true,
+            "injection_amount": 15.0,
+            "injection_frequency": 2
+          },
+          "home_override": {
+            "enabled": false,
+            "override_command": "$H"
+          },
+          "axis_swap": {
+            "enabled": false,
+            "swap_x_y": true
+          }
+        }
+      },
+      {
+        "timestamp": "2025-09-15T18:31:50.523678",
+        "command": "M5",
+        "modified_command": "M5",
+        "firmware_response": "ok",
+        "latency_ms": 314.06133399997316,
+        "attack_type": "none",
+        "parameters": {
+          "calibration_drift": {
+            "enabled": true,
+            "drift_rate": 0.5,
+            "max_drift": 20.0,
+            "current_drift": 0,
+            "reset_period": 6
+          },
+          "power_reduction": {
+            "enabled": true,
+            "reduction_factor": 0.5
+          },
+          "y_injection": {
+            "enabled": true,
+            "injection_amount": 15.0,
+            "injection_frequency": 2
+          },
+          "home_override": {
+            "enabled": false,
+            "override_command": "$H"
+          },
+          "axis_swap": {
+            "enabled": false,
+            "swap_x_y": true
+          }
+        }
+      }
+    ],
+    "without_attacks": [
+      {
+        "timestamp": "2025-09-15T18:31:51.835589",
+        "command": "G90",
+        "modified_command": "G90",
+        "firmware_response": "ok\r\nok",
+        "latency_ms": 0.23587499998711792,
+        "attack_type": "none",
+        "parameters": {}
+      },
+      {
+        "timestamp": "2025-09-15T18:31:52.140400",
+        "command": "G1 F1500",
+        "modified_command": "G1 F1500",
+        "firmware_response": "ok",
+        "latency_ms": 0.2884169999788355,
+        "attack_type": "none",
+        "parameters": {}
+      },
+      {
+        "timestamp": "2025-09-15T18:31:52.440992",
+        "command": "G1 X10 Y10",
+        "modified_command": "G1 X10 Y10",
+        "firmware_response": "ok",
+        "latency_ms": 0.17545900004733994,
+        "attack_type": "none",
+        "parameters": {}
+      },
+      {
+        "timestamp": "2025-09-15T18:31:52.745772",
+        "command": "G1 X30 Y10",
+        "modified_command": "G1 X30 Y10",
+        "firmware_response": "ok",
+        "latency_ms": 0.2457499999763968,
+        "attack_type": "none",
+        "parameters": {}
+      },
+      {
+        "timestamp": "2025-09-15T18:31:53.051568",
+        "command": "G1 X30 Y30",
+        "modified_command": "G1 X30 Y30",
+        "firmware_response": "ok",
+        "latency_ms": 0.22762499997952546,
+        "attack_type": "none",
+        "parameters": {}
+      },
+      {
+        "timestamp": "2025-09-15T18:31:53.352609",
+        "command": "G1 X10 Y30",
+        "modified_command": "G1 X10 Y30",
+        "firmware_response": "ok",
+        "latency_ms": 0.1760829999852831,
+        "attack_type": "none",
+        "parameters": {}
+      },
+      {
+        "timestamp": "2025-09-15T18:31:53.653677",
+        "command": "G1 X10 Y10",
+        "modified_command": "G1 X10 Y10",
+        "firmware_response": "ok",
+        "latency_ms": 0.19687500002874003,
+        "attack_type": "none",
+        "parameters": {}
+      },
+      {
+        "timestamp": "2025-09-15T18:31:53.954972",
+        "command": "M3 S500",
+        "modified_command": "M3 S500",
+        "firmware_response": "ok",
+        "latency_ms": 0.2903330000094684,
+        "attack_type": "none",
+        "parameters": {}
+      },
+      {
+        "timestamp": "2025-09-15T18:31:55.262290",
+        "command": "G1 X20 Y20",
+        "modified_command": "G1 X20 Y20",
+        "firmware_response": "[No response]",
+        "latency_ms": 1001.5695430000164,
+        "attack_type": "none",
+        "parameters": {}
+      },
+      {
+        "timestamp": "2025-09-15T18:31:56.571587",
+        "command": "M5",
+        "modified_command": "M5",
+        "firmware_response": "[No response]",
+        "latency_ms": 1005.8762090000073,
+        "attack_type": "none",
+        "parameters": {}
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "session_id": "20250915_123006",
+  "cnc_target": "192.168.0.170:8080",
+  "statistics": {
+    "total_commands": 2,
+    "modified_commands": 0,
+    "total_drift": 0.0,
+    "max_drift": 0.0,
+    "avg_latency": 104.40766649998068,
+    "attack_types": {},
+    "position_errors": []
+  },
+  "original_path": [],
+  "modified_path": []
+}

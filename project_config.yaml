@@ -1,0 +1,130 @@
+# Project Configuration
+# Manufacturing Systems Security Framework
+
+project:
+  name: "Doom-and-Gloom"
+  formal_name: "Manufacturing Systems Security: ARP-Based Attack Framework for CNC Network Analysis"
+  version: "1.0.0"
+  description: "Research framework for analyzing security vulnerabilities in industrial CNC systems"
+  
+metadata:
+  authors:
+    - name: "Research Team"
+      affiliation: "Academic Institution"
+  funding:
+    - "Office of Naval Research (ONR)"
+  keywords:
+    - "cyber-physical security"
+    - "CNC security"
+    - "ARP poisoning"
+    - "GRBL"
+    - "industrial control systems"
+    - "man-in-the-middle attacks"
+  license: "MIT"
+  
+infrastructure:
+  docker:
+    compose_file: "infrastructure/docker/docker-compose.yml"
+    network:
+      name: "net-10.9.0.0"
+      subnet: "10.9.0.0/24"
+      gateway: "10.9.0.1"
+    containers:
+      - name: "HostA"
+        ip: "10.9.0.5"
+        role: "victim-controller"
+      - name: "HostB"
+        ip: "10.9.0.6"
+        role: "victim-target"
+      - name: "HostM"
+        ip: "10.9.0.105"
+        role: "attacker-researcher"
+        ports:
+          - "8050:8050"  # Dashboard
+          - "8888:8888"  # Proxy
+
+scenarios:
+  attack_types:
+    - name: "calibration_drift"
+      description: "Gradual position error injection"
+      severity: "medium"
+    - name: "power_reduction"
+      description: "Spindle/laser power manipulation"
+      severity: "high"
+    - name: "command_injection"
+      description: "Malicious command insertion"
+      severity: "critical"
+    - name: "command_suppression"
+      description: "Legitimate command dropping"
+      severity: "high"
+  
+  defense_types:
+    - name: "authentication"
+      method: "HMAC-based signing"
+    - name: "encryption"
+      method: "AES-256"
+    - name: "anomaly_detection"
+      method: "Statistical modeling"
+    - name: "integrity_check"
+      method: "Checksum validation"
+
+data:
+  storage:
+    experiments: "data/archived_experiments/"
+    baseline: "data/baseline/"
+    captures: "data/captures/"
+  formats:
+    - "json"
+    - "csv"
+    - "pcap"
+  
+analysis:
+  tools:
+    - "dashboard_enhanced.py"
+    - "generate_report.py"
+    - "statistical_analysis.py"
+  metrics:
+    - "attack_success_rate"
+    - "detection_rate"
+    - "false_positive_rate"
+    - "latency_impact"
+    - "throughput_impact"
+
+hardware:
+  supported_devices:
+    - manufacturer: "GRBL"
+      protocol: "G-code"
+      connection: "TCP socket"
+      default_port: 8080
+  safety:
+    - "Isolated test network required"
+    - "Physical emergency stop button"
+    - "Visual monitoring during tests"
+    - "Workspace cleared of hazards"
+
+experimental_protocols:
+  baseline_duration: 60  # seconds
+  attack_duration: 300   # seconds
+  cooldown_period: 30    # seconds
+  repetitions: 3         # minimum repetitions for statistical validity
+  
+repository:
+  remote: "https://github.com/[username]/Doom-and-Gloom"
+  branches:
+    main: "stable releases"
+    develop: "active development"
+    experiment: "experimental features"
+  
+contact:
+  primary_investigator: "[Your Name]"
+  email: "[Your Email]"
+  institution: "[Your Institution]"
+  
+citations:
+  bibtex: |
+    @software{manufacturing_security_framework,
+      title={Manufacturing Systems Security: ARP-Based Attack Framework for CNC Network Analysis},
+      author={Research Team},
+      year={2025},
+      url={https://github.com/[username]/Doom-and-Gloom}
+    }
