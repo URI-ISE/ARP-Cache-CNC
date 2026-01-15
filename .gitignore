@@ -1,9 +1,11 @@
-# Python
+# Python - Bytecode and compiled files
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+
+# Distribution and packaging
 build/
 develop-eggs/
 dist/
@@ -22,32 +24,65 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+
+# Virtual environments
 venv/
 env/
 ENV/
 env.bak/
 venv.bak/
-cnc/
+.venv/
+.venv
 
-# Jupyter Notebook
-.ipynb_checkpoints
-*.ipynb
+# Python test/coverage tools
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.hypothesis/
 
-# PyCharm
+# IDEs and editors
 .idea/
-
-# VS Code
 .vscode/
 *.code-workspace
+*.swp
+*.swo
+*~
+.DS_Store
 
-# Experimental Data (keep archived, ignore active)
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# Project-specific
+cnc/
 data/active_experiments/
 data/temp/
+
+# Network captures and pcap files
 *.pcap
 *.pcapng
 
 # Logs
 *.log
+logs/
+*.log.*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+
+# Build artifacts
+*.so
+*.o
+*.a
+*.so.bak
 logs/
 infrastructure/volumes/logs/
 

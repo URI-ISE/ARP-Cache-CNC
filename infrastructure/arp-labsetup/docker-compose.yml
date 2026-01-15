@@ -1,0 +1,61 @@
+services:
+  HostA:
+    image: handsonsecurity/seed-ubuntu:large-arm
+    container_name: A-10.9.0.5
+    tty: true
+    cap_add:
+      - ALL
+    networks:
+      net-10.9.0.0:
+        ipv4_address: 10.9.0.5
+    command: >-
+      bash -lc '/etc/init.d/openbsd-inetd start && tail -f /dev/null'
+    restart: unless-stopped
+
+  HostB:
+    image: handsonsecurity/seed-ubuntu:large-arm
+    container_name: B-10.9.0.6
+    tty: true
+    cap_add:
+      - ALL
+    networks:
+      net-10.9.0.0:
+        ipv4_address: 10.9.0.6
+    command: >-
+      bash -lc '/etc/init.d/openbsd-inetd start && tail -f /dev/null'
+    restart: unless-stopped
+
+  HostM:
+    image: handsonsecurity/seed-ubuntu:large-arm
+    container_name: M-10.9.0.105
+    tty: true
+    cap_add:
+      - ALL
+    privileged: true
+    ports:
+      - "8050:8050"
+    volumes:
+      - ./volumes:/volumes
+      - /project5/ARP-Attack/Labsetup-arm/volumes/logs:/volumes/logs
+    networks:
+      net-10.9.0.0:
+        ipv4_address: 10.9.0.105
+    command: >-
+      bash -lc '
+      apt-get update &&
+      apt-get install -y dsniff iptables python3-pip &&
+      pip3 install --no-cache-dir -r /volumes/requirements.txt &&
+      iptables -I INPUT -s 10.9.0.5 -p tcp --dport 9090 -j DROP &&
+      iptables -I FORWARD -s 10.9.0.5 -p tcp --dport 9090 -j DROP &&
+      /etc/init.d/openbsd-inetd start &&
+      tail -f /dev/null
+      '
+    restart: unless-stopped
+
+networks:
+  net-10.9.0.0:
+    name: net-10.9.0.0
+    ipam:
+      config:
+        - subnet: 10.9.0.0/24
+

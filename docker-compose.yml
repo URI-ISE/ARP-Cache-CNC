@@ -3,17 +3,19 @@ version: '3.8'
 services:
   dashboard:
     build: .
-    container_name: doom-gloom-dashboard
+    image: arp-cache-cnc:latest
+    container_name: arp-cache-cnc-dashboard
     ports:
       - "5000:5000"
     volumes:
       # Mount logs directory
       - ./logs:/app/logs
-      # Mount ARP_Attack assets (adjust path if needed)
-      - ../ARP_Attack:/ARP_Attack:ro
+      # Mount data directory for experiments
+      - ./data:/app/data
     environment:
       - FLASK_ENV=production
       - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=INFO
     # Required for IPTables manipulation
     cap_add:
       - NET_ADMIN
@@ -22,12 +24,18 @@ services:
     # privileged: true
     network_mode: host
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
     command: python3 analysis/frontend/arp_loader.py
 
   # Optional: Add a simple network proxy/interceptor container
   # interceptor:
   #   build: ./docker/interceptor
-  #   container_name: doom-gloom-interceptor
+  #   container_name: arp-cache-cnc-interceptor
   #   network_mode: host
   #   cap_add:
   #     - NET_ADMIN

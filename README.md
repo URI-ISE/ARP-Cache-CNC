@@ -1,8 +1,9 @@
-# Doom-and-Gloom: CNC Security Research Dashboard
+# ARP-Cache-CNC: CNC Security Research Dashboard
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Docker](https://img.shields.io/badge/docker-required-blue.svg)](https://www.docker.com/)
+[![CI](https://github.com/uri-ise/ARP-Cache-CNC/workflows/CI/badge.svg)](https://github.com/uri-ise/ARP-Cache-CNC/actions)
 
 ## Overview
 
@@ -33,13 +34,27 @@ python3 arp_loader.py
 - Flask Dashboard: http://localhost:5000/
 - API: http://localhost:5000/api/status
 
-### Docker (Production)
+### Docker (Local)
 ```bash
+# Build and run locally
 docker-compose up -d
-docker-compose logs -f
+docker-compose logs -f dashboard
 ```
 
-See [SETUP.md](SETUP.md) for detailed installation.
+### GitHub Container Registry (Production)
+```bash
+# Pull from GHCR
+docker pull ghcr.io/uri-ise/ARP-Cache-CNC:latest
+
+# Run from GHCR
+docker run -d \
+  -p 5000:5000 \
+  --cap-add=NET_ADMIN \
+  -v $(pwd)/logs:/app/logs \
+  ghcr.io/uri-ise/ARP-Cache-CNC:latest
+```
+
+See [SETUP.md](SETUP.md) for detailed installation and [CONTAINER.md](docs/CONTAINER.md) for container deployment options.
 
 ## Architecture
 
@@ -53,17 +68,35 @@ Browser → Flask+SocketIO (Port 5000) → IPTables → CNC (192.168.0.170:8080)
 ## Project Structure
 
 ```
-Doom-and-Gloom/
+ARP-Cache-CNC/
 ├── analysis/
 │   ├── dashboard_enhanced.py      # Flask server + IPTables control
 │   └── frontend/
 │       ├── arp_loader.py          # Dash UI loader
 │       └── simple_dash.py         # Minimal UI
-├── infrastructure/docker/         # Container configs
-├── scenarios/attack_modules/      # G-code attacks
-├── tests/smoke_test.py           # Endpoint validation
+├── infrastructure/
+│   ├── arp-labsetup/              # ARP lab setup & documentation
+│   └── docker/                    # Container configs
+├── scenarios/
+│   ├── research_scenarios.py      # Attack research framework
+│   ├── prevention_modules.py      # Defense mechanisms
+│   ├── research_framework.py      # Experiment framework
+│   ├── attack_simulator.py        # G-code attack simulator
+│   └── other_modules/             # Additional attack tools
+├── tests/
+│   ├── test_basics.py            # Unit tests
+│   └── smoke_test.py             # Integration tests
+├── docs/
+│   ├── CONTAINER.md              # Container deployment guide
+│   ├── EXPERIMENT.md             # Research experiment framework
+│   └── EXPERIMENT_REPORT.md      # Sample results
 ├── docker-compose.yml
-└── requirements.txt
+├── Dockerfile                     # GHCR-optimized image
+├── pyproject.toml
+├── requirements.txt
+└── .github/workflows/
+    ├── ci.yml                     # Test pipeline
+    └── container.yml              # GHCR build pipeline
 ```
 
 ## API Endpoints
@@ -101,7 +134,7 @@ docker ps  # Verify 3 containers running
 
 ## Contributing
 
-Research collaborators, graduate students, and industry partners welcome. See [SETUP.md](SETUP.md) for contribution guidelines.
+Research collaborators, graduate students, and industry partners welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines and development setup.
 
 ## License
 
@@ -110,21 +143,24 @@ MIT License - See [LICENSE](LICENSE) for details.
 ## Documentation
 
 - [SETUP.md](SETUP.md) - Installation, Docker, deployment
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Development guidelines
+- [CONTAINER.md](docs/CONTAINER.md) - Docker & GHCR deployment options
+- [EXPERIMENT.md](docs/EXPERIMENT.md) - Research experiment framework
 - [REFERENCE.md](REFERENCE.md) - Commands, API, troubleshooting
 
 ## Citation
 
 ```bibtex
-@software{doom_and_gloom,
-  title={Doom-and-Gloom: CNC Security Research Dashboard},
-  author={Research Team},
+@software{arp_cache_cnc,
+  title={ARP-Cache-CNC: CNC Security Research Dashboard},
+  author={University of Rhode Island, Industrial Systems Engineering},
   year={2025},
-  url={https://github.com/lpep64/Doom-and-Gloom}
+  url={https://github.com/uri-ise/ARP-Cache-CNC}
 }
 ```
+- **Organization**: University of Rhode Island, Industrial Systems Engineering
 - **Primary Investigator**: [Your Name]
 - **Email**: [Your Email]
-- **Institution**: [Your Institution]
 
 ## Related Projects
 
