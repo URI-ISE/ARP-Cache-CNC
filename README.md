@@ -99,6 +99,10 @@ ARP-Cache-CNC/
     └── container.yml              # GHCR build pipeline
 ```
 
+## CI/CD
+- `ci.yml`: matrix Python tests, coverage reporting, and optional flake8 linting on pushes and PRs.
+- `container.yml`: builds and pushes images to GHCR, runs Trivy, and uploads SARIF via CodeQL Action v3 (upload skipped if the SARIF file is absent).
+
 ## API Endpoints
 
 - `GET /api/status` - System status & statistics
